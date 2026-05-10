@@ -51,9 +51,10 @@ jobs:
             - name: Install rust target
               run: rustup target add ${{ matrix.target }}
 
-            - uses: pnpm/action-setup@v3
+            - name: Install pnpm
+              uses: pnpm/action-setup@v3
               with:
-                  version: latest
+               version: 8 
 
             - name: Sync node version and setup cache
               uses: actions/setup-node@v4
